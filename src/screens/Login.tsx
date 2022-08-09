@@ -1,12 +1,13 @@
 import React, {FC} from 'react';
-import {StyleSheet} from 'react-native';
-import {Text} from 'react-native-paper';
+import {StatusBar, StyleSheet} from 'react-native';
+import {Text, Title} from 'react-native-paper';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const Login: FC = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Login</Text>
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+      <Title>Halo</Title>
     </SafeAreaView>
   );
 };
