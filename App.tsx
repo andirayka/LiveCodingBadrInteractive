@@ -2,13 +2,17 @@
 import 'react-native-gesture-handler';
 
 import React, {FC} from 'react';
-import {Text} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Provider as PaperProvider} from 'react-native-paper';
+import {AppRouter} from 'routes';
 
 const App: FC = () => {
   return (
-    <>
-      <Text>Oke</Text>
-    </>
+    <SafeAreaProvider>
+      <PaperProvider>
+        <AppRouter />
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 };
 
