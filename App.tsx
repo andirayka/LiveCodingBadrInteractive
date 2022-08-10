@@ -3,14 +3,17 @@ import 'react-native-gesture-handler';
 
 import React, {FC} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {Provider as PaperProvider} from 'react-native-paper';
+import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import {AppRouter} from 'routes';
+import AppContextProvider from 'context';
 
 const App: FC = () => {
   return (
     <SafeAreaProvider>
-      <PaperProvider>
-        <AppRouter />
+      <PaperProvider theme={DefaultTheme}>
+        <AppContextProvider>
+          <AppRouter />
+        </AppContextProvider>
       </PaperProvider>
     </SafeAreaProvider>
   );
