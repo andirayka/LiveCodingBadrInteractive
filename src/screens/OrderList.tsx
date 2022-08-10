@@ -78,26 +78,13 @@ export const OrderList: FC = () => {
 
 const OrderData = ({order}: {order: OrderType}) => {
   return (
-    <Card style={{marginBottom: 16}}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 16,
-        }}>
+    <Card style={{marginBottom: 16, elevation: 2}}>
+      <View style={styles.cardContentContainer}>
         <View style={{flex: 1}}>
           <Text style={{color: '#052A49', fontSize: dimens.medium_14}}>
             Order Id
           </Text>
-          <Text
-            style={{
-              color: '#052A49',
-              fontSize: dimens.medium_14,
-              fontWeight: 'bold',
-            }}>
-            {order.order_id}
-          </Text>
+          <Text style={styles.orderIdTitle}>{order.order_id}</Text>
         </View>
         <Text
           style={{
@@ -131,14 +118,7 @@ const Content = ({
       <Paragraph style={{flex: 6, fontSize: 13, color: '#4F4F4F'}}>
         {keyName}
       </Paragraph>
-      <Paragraph
-        style={{
-          flex: 8,
-          fontSize: 13,
-          color: '#052A49',
-        }}>
-        {value}
-      </Paragraph>
+      <Paragraph style={styles.cardValue}>{value}</Paragraph>
     </View>
   );
 };
@@ -160,5 +140,21 @@ const styles = StyleSheet.create({
     color: '#000',
     textAlign: 'center',
     fontWeight: 'bold',
+  },
+  cardContentContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+  orderIdTitle: {
+    color: '#052A49',
+    fontSize: dimens.medium_14,
+    fontWeight: 'bold',
+  },
+  cardValue: {
+    flex: 8,
+    fontSize: 13,
+    color: '#052A49',
   },
 });
